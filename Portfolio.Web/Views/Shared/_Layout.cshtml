@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title — Viktoria Minka Portfolio</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+<body>
+    <div id="header">
+        <div id="header-content">
+            <nav>
+                <ul>
+                    <li><a class="selected" href="#">home</a></li>
+                    <li><a href="#">booklets / calendar</a></li>
+                    <li><a href="#">logos / pictograms</a></li>
+                    <li><a href="#">illustration</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+                <a class="mailme" href="malito:viktoria.minka@gmail.com">
+                    <img src="~/Content/images/ribbon.png" alt="mail me"/>
+                </a>
+            </nav>
+        </div>
+    </div>
+  
+    <div id="main">
+        <div id="main-content">
+            <img src="~/Content/images/logo.png" />
+            @RenderBody()
+        </div>
+    </div>
+    
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

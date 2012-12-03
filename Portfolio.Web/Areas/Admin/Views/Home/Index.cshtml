@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Portfolio.Domain.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Database management</h2>
+@Html.ActionLink("Add new Category", "Create", "Category")
+@Html.ActionLink("Add new Picture", "Create", "Picture")
+<table>
+    <thead>
+       <tr>
+           <td colspan="3"><strong>Categories</strong></td>
+       </tr>
+    </thead>
+
+    @foreach (var category in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(category.Name, "Category", new { id = category.CategoryId})</td>
+            <td>@Html.ActionLink("Edit", "Edit", "Category", new { id = category.CategoryId}, null) @Html.ActionLink("Delete", "Delete", "Category", new { id = category.CategoryId}, null)</td>
+        </tr>
+    }    
+</table>

@@ -1,0 +1,16 @@
+﻿@model System.Int32
+
+@{
+    ViewBag.Title = "Delete Confirmation";
+}
+
+<h2>Delete Confirmation</h2>
+
+Are you sure?
+@using (Html.BeginForm(new { id = Model})) {
+        <input type="submit" value="Yes, Delete" />
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "Home")
+</div>

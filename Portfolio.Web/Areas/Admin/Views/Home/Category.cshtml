@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Portfolio.Domain.Picture>
+
+@{
+    ViewBag.Title = "Category";
+}
+
+<h2>Category</h2>
+
+
+<table>
+    <thead>
+       <tr>
+           <td colspan="3"><strong>Pictures</strong></td>
+       </tr>
+    </thead>
+    
+    @foreach (var picture in Model)
+    {
+        <tr>
+            <td><i>@picture.Description</i><br/>
+                <a href="@picture.ImageUrl"><img src="@picture.ImageUrl" alt="@picture.Description" width="150"/></a> </td>
+            <td>@Html.ActionLink("Edit", "Edit", "Picture", new { id = picture.PictureId}, null) @Html.ActionLink("Delete", "Delete", "Picture", new { id = picture.PictureId}, null)</td>
+        </tr>
+    }    
+</table>
+
+<div>
+    @Html.ActionLink("Back to categories list", "Index", "Home")
+</div>
